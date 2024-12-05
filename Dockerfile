@@ -29,9 +29,6 @@ RUN npm install --production
 # Step 10: Copy the compiled JavaScript code from the builder stage
 COPY --from=builder /usr/src/app/dist ./dist
 
-# Step 11: Copy any necessary static files (e.g., .env)
-COPY .env ./
-
 # Step 12: Expose the port
 EXPOSE 3001
 
