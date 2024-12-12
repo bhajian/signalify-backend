@@ -13,6 +13,7 @@ import { initializeChannelCollection } from "./controllers/channelController";
 import { initializeSignalCollection } from "./controllers/signalController";
 import { initializeSubscriptionCollection } from "./controllers/subscriptionController";
 import { initializeCollections } from "./controllers/paymentController";
+import cors from 'cors';
 
 const app = express();
 (async () => {
@@ -25,6 +26,7 @@ const app = express();
   })();
   
 app.use(express.json());
+app.use(cors({ origin: 'http://localhost:3000' }));
 
 // Use routes
 app.use("/api/hello", helloRoutes);
