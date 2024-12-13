@@ -14,8 +14,8 @@ export const initializeProfilesCollection = () => {
 export const createProfile = async (req: Request, res: Response): Promise<void> => {
   try {
 
-    const { sub, username, email } = req.user as { sub: string, username: string; email: string; };
-    const { name, lastName, phone, address, role } = req.body;
+    // const { sub, username, email } = req.user as { sub: string, username: string; email: string; };
+    const { name, lastName, phone, address, role, sub, username, email } = req.body;
 
     if (!sub || !email) {
       res.status(400).json({ error: "sub and email are required" });

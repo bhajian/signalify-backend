@@ -1,10 +1,9 @@
-// src/types/express.d.ts
 import { JwtPayload } from "jsonwebtoken";
 
 declare global {
   namespace Express {
     interface Request {
-      user?: string | JwtPayload; // Adjust the type as per your JWT structure
+      user?: string | JwtPayload; // Adjust this type to match your decoded token structure
     }
   }
 }
